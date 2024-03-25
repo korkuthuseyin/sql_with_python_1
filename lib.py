@@ -23,7 +23,6 @@ def create_table(tablename):
     
 def insert_data(tablename, name, barcode):
     conn, cur = connect_db()
-    # take biggest id and increment it by 1
     cur.execute(f"SELECT MAX(id) FROM {tablename}")
     last_id = cur.fetchone()[0]
     if last_id is not None:
